@@ -22,7 +22,7 @@ def sample_dpp(L,k=None):
         mtb = matlab_wrapper.MatlabSession()
 
     # load values in Matlab and get sample
-    mtb.putvalue('L',L)
+    mtb.put('L',L)
     if k!=None: 
         k = np.array([[k]])  # matlab only undenstand matrices 
         mtb.put('k',k)
@@ -108,7 +108,6 @@ def sample_dual_dpp(L,q,k=None):
     
     # load values in Matlab and get sample
     mtb.put('B',B)
-    #mtb.putvalue('B',B)
     
     if k!=None: 
         k = np.array([[k]])  # matlab only undernstand matrices 
