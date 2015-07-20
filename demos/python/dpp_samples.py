@@ -1,10 +1,7 @@
-import os
-os.chdir("/home/javier/workspace/GitHub/GPyOpt/GPyOpt/util/dpp_samplers")
-
 import GPy
 import matplotlib.pyplot as plt
 from GPyOpt.util.general import multigrid
-from dpp import *
+from dpp.samplers.dpp import *
 
 # Genetate grid
 Ngrid = 50

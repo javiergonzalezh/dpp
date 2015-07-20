@@ -32,7 +32,7 @@ def sample_dpp(L,k=None):
         
     #dpp_sample = mtb.getvalue('dpp_sample')
     dpp_sample = mtb.get('dpp_sample')
-    return dpp_sample.astype(int)-1  # index start in zero in python
+    return dpp_sample.astype(int)
 
 
 def sample_conditional_dpp(L,set0,k=None):
@@ -46,7 +46,6 @@ def sample_conditional_dpp(L,set0,k=None):
             (starting in zero) relative to the rows of L.
     k:     size of the sample from the DPP
     '''
-    set0 = np.array(set0)+1 # matlab starts counting in one
     # Calculate the kernel for the marginal
     Id = np.array([1]*L.shape[0])
     Id[set0] = 0
@@ -58,7 +57,7 @@ def sample_conditional_dpp(L,set0,k=None):
     # Compute the sample
     sample = sample_dpp(L_compset,k)
     if k==2: sample = [sample]
-    return np.concatenate((set0,sample) ,axis=0)-1  # back to python indexing
+    return np.concatenate((set0,sample) ,axis=0)
 
 
 def sample_dual_conditional_dpp(L,set0,q,k=None):
